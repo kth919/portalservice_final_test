@@ -3,6 +3,7 @@ package model;
 import org.hibernate.annotations.Entity;
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.io.Serializable;
@@ -10,12 +11,15 @@ import java.io.Serializable;
 /**
  * Created by admin on 2016-06-11.
  */
+
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "name", nullable = false)
     private String name;
+    @Column(name = "password", nullable = false)
     private String password;
 
 //    @JoinColumn(name = "userinfo_id")

@@ -1,25 +1,69 @@
 package main.controller;
 
+import model.User;
 import org.apache.log4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import repository.UserRepository;
+
+import java.util.List;
 
 /**
  * Created by admin on 2016-06-12.
  */
 @Controller
+@EnableAutoConfiguration
 public class ViewController {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ViewController.class);
 
-    @RequestMapping("hello")
-    public String index(Model model) {
-        model.addAttribute("hello", "SpringBlog from Millky");
+    @Autowired
+    private UserRepository userRepository;
+
+    @RequestMapping(value = "hello",  method = RequestMethod.GET)
+    public String hello(Model model) {
+       model.addAttribute("hello", "SpringBlog from ");
         return "hello";
+    }
+
+    @RequestMapping(value = "new",  method = RequestMethod.GET)
+    public String New(Model model) {
+        return "new";
+    }
+
+
+    @RequestMapping(value = "main",  method = RequestMethod.GET)
+    public String index(Model model) {
+        return "main2";
+    }
+
+    @RequestMapping(value = "login",  method = RequestMethod.GET)
+    public String login(Model model) {
+        return "login";
+    }
+
+    @RequestMapping(value = "join",  method = RequestMethod.GET)
+    public String join(Model model) {
+        return "join";
+    }
+
+    @RequestMapping("/add")
+    public User addUser(User user) {
+
+        User userData = userRepository.save(user);
+
+        return userData;
+    }
+
+    @RequestMapping("users")
+    public List<User> getUserList(Model model) {
+
+        List<User> userList = userRepository.findAll();
+
+        return userList;
     }
 
 

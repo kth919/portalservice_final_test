@@ -3,11 +3,15 @@ package main.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.Table;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.data.annotation.Id;
+
+import javax.naming.Name;
+import javax.persistence.*;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -18,12 +22,16 @@ import java.io.Serializable;
  * Created by admin on 2016-06-11.
  */
 
-@Entity
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+
+@javax.persistence.Entity
+@javax.persistence.Table(name ="user")
 public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name="id")
+    private String id;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "password", nullable = false)
@@ -33,11 +41,11 @@ public class User implements Serializable {
 //    @OneToMany
 //    private List<Comment> comments;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

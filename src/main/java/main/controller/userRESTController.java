@@ -18,13 +18,19 @@ import java.util.List;
 @RequestMapping("/rest")
 public class userRESTController {
 
-    @Autowired
-    private UserRepository userRepository;
+@Autowired
+private UserRepository userRepository;
 
     @RequestMapping(value = "add",  method = RequestMethod.GET)
     public User addUser(User user) {
 
-        User userData = userRepository.save(user);
+        User userData = new User();
+
+        user.setId("kth919");
+        user.setName("나다");
+        user.setPassword("1234");
+
+        userData = userRepository.save(user);
 
         return userData;
     }
@@ -32,7 +38,7 @@ public class userRESTController {
     @RequestMapping(value = "users",  method = RequestMethod.GET)
     public List<User> getUserList(Model model) {
 
-        List<User> userList = userRepository.findAll();
+        List<User> userList = (List<User>) userRepository.findAll();
 
         return userList;
     }

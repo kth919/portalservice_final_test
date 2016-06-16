@@ -21,29 +21,29 @@ public class ViewController {
 
 
 
-    @RequestMapping(value = "hello",  method = RequestMethod.GET)
+    @RequestMapping(value = "/hello",  method = RequestMethod.GET)
     public String hello(Model model) {
        model.addAttribute("hello", "SpringBlog from ");
         return "hello";
     }
 
-    @RequestMapping(value = "new",  method = RequestMethod.GET)
+    @RequestMapping(value = "/new",  method = RequestMethod.GET)
     public String New(Model model) {
         return "new";
     }
 
 
-    @RequestMapping(value = "main",  method = RequestMethod.GET)
+    @RequestMapping(value = "/main",  method = RequestMethod.GET)
     public String index(Model model) {
         return "main2";
     }
 
-    @RequestMapping(value = "login",  method = RequestMethod.GET)
+    @RequestMapping(value = "/login",  method = RequestMethod.GET)
     public String login(Model model) {
         return "login";
     }
 
-    @RequestMapping(value = "join",  method = RequestMethod.GET)
+    @RequestMapping(value = "/join",  method = RequestMethod.GET)
     public String join(Model model) {
         return "join";
     }

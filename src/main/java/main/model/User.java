@@ -8,7 +8,6 @@ import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.Table;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.data.annotation.Id;
 
 import javax.naming.Name;
 import javax.persistence.*;
@@ -16,6 +15,7 @@ import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -29,7 +29,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private String id;
     @Column(name = "name", nullable = false)

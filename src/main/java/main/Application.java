@@ -19,8 +19,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableAutoConfiguration
 @SpringBootApplication(exclude = ThymeleafAutoConfiguration.class)
-@EntityScan
-@EnableJpaRepositories
+//@EntityScan
+//@EnableJpaRepositories
 public class Application {
 
     public static void main(String[] args){

@@ -28,7 +28,6 @@ import java.io.Serializable;
 public class User {
 
     @Id
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String id;
     private String name;
     private String password;

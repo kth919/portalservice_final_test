@@ -29,7 +29,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-ws")
     compile('mysql:mysql-connector-java:5.1.37')
-    compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile ("org.springframework:springloaded" )
 
     runtime("com.h2database:h2")

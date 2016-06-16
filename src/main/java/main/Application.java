@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
+import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,11 +15,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by admin on 2016-06-10.
  */
 
-//@ComponentScan
-//@Configuration
-//@EnableAutoConfiguration
+@Configuration
+@EnableAutoConfiguration
 @SpringBootApplication(exclude = ThymeleafAutoConfiguration.class)
-@RestController
+@EntityScan
 public class Application {
 
     public static void main(String[] args){

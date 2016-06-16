@@ -1,14 +1,13 @@
 package main.controller;
 
-import model.User;
-import org.apache.log4j.Logger;
+import main.model.User;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import repository.UserRepository;
+import main.repository.UserRepository;
 
 import java.util.List;
 
@@ -16,12 +15,11 @@ import java.util.List;
  * Created by admin on 2016-06-12.
  */
 @Controller
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 public class ViewController {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ViewController.class);
 
-    @Autowired
-    private UserRepository userRepository;
+
 
     @RequestMapping(value = "hello",  method = RequestMethod.GET)
     public String hello(Model model) {
@@ -50,21 +48,7 @@ public class ViewController {
         return "join";
     }
 
-    @RequestMapping("/add")
-    public User addUser(User user) {
 
-        User userData = userRepository.save(user);
-
-        return userData;
-    }
-
-    @RequestMapping("users")
-    public List<User> getUserList(Model model) {
-
-        List<User> userList = userRepository.findAll();
-
-        return userList;
-    }
 
 
 //

@@ -22,19 +22,15 @@ import java.io.Serializable;
  * Created by admin on 2016-06-11.
  */
 
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @javax.persistence.Entity
-@javax.persistence.Table(name ="user")
-public class User implements Serializable {
+//@javax.persistence.Table(name ="user")
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String id;
-    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "password", nullable = false)
     private String password;
 
 //    @JoinColumn(name = "userinfo_id")

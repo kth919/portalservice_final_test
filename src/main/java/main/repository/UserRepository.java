@@ -10,5 +10,5 @@ import org.springframework.stereotype.Service;
  * Created by admin on 2016-06-15.
  */
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, String> {
 }

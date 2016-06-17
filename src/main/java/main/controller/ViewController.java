@@ -14,18 +14,11 @@ public class ViewController {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ViewController.class);
 
 
-
     @RequestMapping(value = "/hello",  method = RequestMethod.GET)
     public String hello(Model model) {
        model.addAttribute("hello", "SpringBlog from ");
         return "hello";
     }
-
-    @RequestMapping(value = "/new",  method = RequestMethod.GET)
-    public String New(Model model) {
-        return "new";
-    }
-
 
     @RequestMapping(value = "/main",  method = RequestMethod.GET)
     public String index(Model model) {

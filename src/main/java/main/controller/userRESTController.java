@@ -30,9 +30,9 @@ private UserRepository userRepository;
     @RequestMapping("/list")
     public List<UserList> list(Model model){
 
-        List<UserList> userList = userRepository.findAll();
+        List<UserList> ListAll = userRepository.findAll();
 
-        return userList;
+        return ListAll;
     }
 
 //

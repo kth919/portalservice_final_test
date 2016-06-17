@@ -1,23 +1,6 @@
 package main.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.io.Serializable;
-import org.hibernate.annotations.Entity;
-import org.hibernate.annotations.Table;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-
-import javax.naming.Name;
-import javax.persistence.*;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
-
 /**
  * Created by admin on 2016-06-11.
  */
@@ -25,7 +8,6 @@ import java.io.Serializable;
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @javax.persistence.Entity
-//@javax.persistence.Table(name ="user")
 public class UserList {
 
     @Id

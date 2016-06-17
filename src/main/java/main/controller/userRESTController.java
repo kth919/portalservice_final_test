@@ -1,6 +1,6 @@
 package main.controller;
 
-import main.model.UserList;
+import main.model.User;
 import main.repository.UserRepository;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,25 +21,25 @@ public class userRESTController {
 private UserRepository userRepository;
 
 @RequestMapping("/add")
-    public UserList add(UserList userList){
-    UserList listData = userRepository.save(userList);
+    public User add(User user){
+    User listData = userRepository.save(user);
 
     return listData;
 }
 
     @RequestMapping("/list")
-    public List<UserList> list(Model model){
+    public List<User> list(Model model){
 
-        List<UserList> ListAll = userRepository.findAll();
+        return  userRepository.findAll();
 
-        return ListAll;
+
     }
 
 //
 //    @RequestMapping("/user/{id}")
-//    public UserList getUserList(@PathVariable String id) {
+//    public User getUser(@PathVariable String id) {
 //
-//        UserList userList = userRepository.findOne("{id}");
+//        User userList = userRepository.findOne("{id}");
 //
 //        return userList;
 //    }

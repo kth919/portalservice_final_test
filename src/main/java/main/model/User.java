@@ -8,7 +8,7 @@ import javax.persistence.Id;
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @javax.persistence.Entity
-public class UserList {
+public class User {
 
     @Id
     private String userid;
@@ -20,9 +20,9 @@ public class UserList {
 //    @OneToMany
 //    private List<Comment> comments;
 
-    public UserList(){};
+    public User(){};
 
-    public UserList(String name, String password){
+    public User(String name, String password){
 
         super();
         this.name = name;

@@ -41,6 +41,5 @@ dependencies {
     compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.9")
 
     compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.0.Final'
-    compile('org.hibernate:hibernate-core:5.2.0.Final')
 
 }

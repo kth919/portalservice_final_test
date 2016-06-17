@@ -1,15 +1,9 @@
 package main.controller;
 
-import main.model.User;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import main.repository.UserRepository;
-
-import java.util.List;
 
 /**
  * Created by admin on 2016-06-12.

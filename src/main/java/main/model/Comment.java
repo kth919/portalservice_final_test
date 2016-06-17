@@ -12,7 +12,7 @@ import java.util.Date;
 public class Comment {
 
     private Integer id;
-    private User user;
+    private UserList userList;
     private String content;
 
     @CreatedDate
@@ -26,12 +26,12 @@ public class Comment {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public UserList getUserList() {
+        return userList;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserList(UserList userList) {
+        this.userList = userList;
     }
 
     public String getContent() {

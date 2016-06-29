@@ -15,10 +15,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="/user/add" , method= RequestMethod.POST )
+    @RequestMapping(value="/user/add" )
     public String addUser(HttpServletRequest request){
         userService.addUser(request);
-        return "redirect:/";
+        return "redirect:/join";
     }
 
 }

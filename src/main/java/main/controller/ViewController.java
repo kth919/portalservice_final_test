@@ -14,23 +14,17 @@ public class ViewController {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ViewController.class);
 
 
-    @RequestMapping(value = "/hello",  method = RequestMethod.GET)
-    public String hello(Model model) {
-       model.addAttribute("hello", "SpringBlog from ");
-        return "hello";
-    }
-
-    @RequestMapping(value = "/main",  method = RequestMethod.GET)
+    @RequestMapping(value = "/main" , method = {RequestMethod.GET, RequestMethod.POST})
     public String index(Model model) {
         return "main2";
     }
 
-    @RequestMapping(value = "/login",  method = RequestMethod.GET)
+    @RequestMapping(value = "/login",  method = RequestMethod.POST)
     public String login(Model model) {
         return "login";
     }
 
-    @RequestMapping(value = "/join",  method = RequestMethod.GET)
+    @RequestMapping(value = "/join" , method = {RequestMethod.GET, RequestMethod.POST} )
     public String join(Model model) {
         return "join";
     }

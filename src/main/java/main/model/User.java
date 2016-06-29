@@ -14,7 +14,7 @@ public class User {
     private String userid;
     private String name;
     private String password;
-    private String des;
+    private String desc;
 
 //    @JoinColumn(name = "userinfo_id")
 //    @OneToMany
@@ -54,11 +54,11 @@ public class User {
     }
 
     public String getDesc() {
-        return des;
+        return desc;
     }
 
     public void setDesc(String desc){
-        this.des = des;
+        this.desc = desc;
     }
 
 }

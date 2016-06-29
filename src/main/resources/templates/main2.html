@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link rel="stylesheet" href="css.css"/>
   <title>기말고사</title>
 
 </head>
 
-
 <body>
-
 
     <header id ="top">
 
@@ -21,33 +20,54 @@
 
  </header>
 
-    <table id="table">
+<table class="board">
+  <tr>
 
+  <td>
+<img id="area1" src="norway.jpg">
+</td>
 
-    </table>
+  <td>
+
+  <div id="area2">김태훈</div> 
+
+</td>
+
+  <td>
+
+  <div id="">제주대학교 공부중</div>
+
+</td>
+
+  <td>
+
+  <a href="#" class ="button blue" id="button_area1">추천</a>
+
+</td>
+
+  <th>
+
+   <a href="#" class ="button blue" id="button_area2">반대</a>
+
+</th>
+
+  <td>
+
+  <div id="">5분전</div>
+
+</td>
+
+  </tr>
+
+   <tr>
+  </tr>
+
+</table>
 
 <script src="scripts.js"></script>
 <script src="util.js"></script>
 <script src="css.css"></script>
-<script>
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:8080/rest/list');
-    xhr.onreadystatechange = function(){
-            var _tzs = xhr.responseText;
-            var tzs = JSON.parse(_tzs);
-            console.log(tzs);
-        //저 id 테이블 저걸 선택해서
-        // 저기에 innerHTML써서
-        //tr이랑 td랑 만들고ㅓ
-        // 거기에 데이터를 넣으면되
-        console.log(tzs[0].name)
-        console.log(tzs[0].password)
-        console.log(tzs[0].userId)
 
-    }
-    xhr.send();
-
-</script>
 </body>
 
 </html>

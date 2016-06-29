@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<html lang="kr" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
   <meta charset="UTF-8"/>
 <link rel="stylesheet" href="css.css"/>
@@ -10,85 +11,87 @@
 
 <body>
 
-<table class="join_table">
-
-  <tr>
-
-  <td id="id_text">ID
-  </td>
-
-  <td id="id_form">
-    <input name="id" value="아이디"/>
-
-  </td>
-
-  </tr>
-
-   <tr>
-
-  <td id="pass_text">Password
-  </td>
-
-  <td id="pass_form">
-    <input name="pasword" value="비밀번호"/>
-  </td>
-
-  </tr>
-
-  <tr>
-
-  <td id="name_text">이름
-  </td>
-
-  <td id="name_form">
-        <input name="name" value=""/>
-
-  </td>
-  
-  </tr>
-
-  <tr>
-
-  <td id="info_text">설명
-  </td>
-
-  <td id="info_form">
-        <input name="info" value=""/>
-
-  </td>
-  
-  </tr>
+<form action="../user/add" method="post" enctype="multipart/form-date">
+  <table class="join_table">
 
     <tr>
 
-  <td id="profile_text">프로필이미지
-  </td>
+      <td id="id_text">ID
+      </td>
 
-  <td id="profile_form">
+      <td id="id_form">
+        <input name="id" value="아이디"/>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td id="pass_text">Password
+      </td>
+
+      <td id="pass_form">
+        <input type="password" name="pasword" value="비밀번호"/>
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td id="name_text">이름
+      </td>
+
+      <td id="name_form">
+        <input name="name" value=""/>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td id="info_text">설명
+      </td>
+
+      <td id="info_form">
+        <input name="info" value=""/>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td id="profile_text">프로필이미지
+      </td>
+
+      <td id="profile_form">
         <input name="profile" value=""/>
-  </td>
+      </td>
 
-  <td>
-  <a href="#" class ="button blue" id="button_area1">찾아보기</a>
-  </td>
-  
-  </tr>
+      <td>
+        <a href="#" class ="button blue" id="button_area1">찾아보기</a>
+      </td>
 
-  <tr>
+    </tr>
 
-  <td id="join_button">
-      <a href="#" class ="button blue" id="button_area1">회원가입</a>
+    <tr>
 
-  </td>
+      <td id="join_button">
+        <input type="submit" value="회원가입"/>
+      </td>
 
-  <td id="cancel">
-      <a href="#" class ="button blue" id="button_area1">취소</a>
+      <td id="cancel">
+        <input type="reset" value="취소"/>
+      </td>
 
-  </td>
-  
-  </tr>
+    </tr>
 
-</table>
+  </table>
+
+</form>
+
 
 <script src="scripts.js"></script>
 <script src="util.js"></script>

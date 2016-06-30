@@ -1,6 +1,7 @@
 package main.model;
 
-import javax.persistence.Id;
+import javax.persistence.*;
+
 /**
  * Created by admin on 2016-06-11.
  */
@@ -8,33 +9,25 @@ import javax.persistence.Id;
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @javax.persistence.Entity
-public class User {
+public class Userinfo {
 
     @Id
     private String userid;
     private String name;
     private String password;
-    private String desc;
+    private String des;
 
 //    @JoinColumn(name = "userinfo_id")
 //    @OneToMany
 //    private List<Comment> comments;
 
-    public User(){};
-
-    public User(String name, String password){
-
-        super();
-        this.name = name;
-        this.password = password;
-    }
 
     public String getuserId() {
         return userid;
     }
 
-    public void setuserId(String id) {
-        this.userid = id;
+    public void setuserId(String userId) {
+        this.userid = userId;
     }
 
     public String getName() {
@@ -54,11 +47,11 @@ public class User {
     }
 
     public String getDesc() {
-        return desc;
+        return des;
     }
 
     public void setDesc(String desc){
-        this.desc = desc;
+        this.des = desc;
     }
 
 }

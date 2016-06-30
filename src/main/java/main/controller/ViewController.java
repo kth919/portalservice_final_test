@@ -19,7 +19,7 @@ public class ViewController {
         return "main2";
     }
 
-    @RequestMapping(value = "/login",  method = RequestMethod.POST)
+    @RequestMapping(value = "/login",  method = {RequestMethod.GET, RequestMethod.POST})
     public String login(Model model) {
         return "login";
     }

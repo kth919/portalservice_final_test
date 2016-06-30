@@ -1,12 +1,9 @@
 package main.service;
 
-import main.model.User;
+import main.model.Userinfo;
 import main.repository.UserRepository;
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,14 +19,14 @@ public class UserServiceImpl implements UserService{
     @Override
     public void addUser(HttpServletRequest request) {
 
-        User user = new User();
+        Userinfo userinfo = new Userinfo();
 
-        user.setName(request.getParameter("name"));
-        user.setuserId(request.getParameter("userId"));
-        user.setPassword(request.getParameter("password"));
-        user.setDesc(request.getParameter("desc"));
+        userinfo.setName(request.getParameter("name"));
+        userinfo.setuserId(request.getParameter("userid"));
+        userinfo.setPassword(request.getParameter("password"));
+        userinfo.setDesc(request.getParameter("des"));
 
-        userRepository.save(user);
+        userRepository.save(userinfo);
     }
 }
 

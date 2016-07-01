@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
         userinfo.setName(request.getParameter("name"));
         userinfo.setuserId(request.getParameter("userid"));
         userinfo.setPassword(request.getParameter("password"));
-        userinfo.setDesc(request.getParameter("des"));
+        userinfo.setDesc(request.getParameter("des")); // mysql에서 desc 라는 변수명 사용불가
 
         userRepository.save(userinfo);
     }

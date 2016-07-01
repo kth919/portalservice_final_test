@@ -10,6 +10,8 @@
 </head>
 
 <body>
+<!-- 
+	<form action="../signin/auth" method="POST" enctype="multipart/form-date">
 <table class="login_table">
 
 <tr>
@@ -36,18 +38,30 @@
 <tr>
 
 <td id="login_button">
-  <a href="#" class ="button blue" id="button_area1">로그인</a>
+        <input type="submit" value="로그인"/>
 </td>
 
 <td id="cancel">
-  <a href="#" class ="button blue" id="button_area1">취소</a>
+        <input type="reset" value="취소"/>
 
 </td>
 
 </tr>
 
 </table>
+</form>
+ -->
 
+<form action="/signin/auth" method="POST" th:action="@{/login}">
+
+		<input type="text" id="username" name="j_username"/>	
+				<input type="password" id="password" name="j_password"/>	
+
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	<input type="submit" value="로그인"/>
+
+
+</form>
 
 <script src="scripts.js"></script>
 <script src="util.js"></script>

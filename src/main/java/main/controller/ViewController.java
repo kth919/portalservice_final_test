@@ -29,6 +29,12 @@ public class ViewController {
         return "join";
     }
 
+    @RequestMapping(value = "/testlogin" , method = {RequestMethod.GET, RequestMethod.POST} )
+    public String testlogin(Model model) {
+        return "testlogin";
+    }
+
+
 
 
 

@@ -1,41 +1,43 @@
 package main.controller;
 
 import org.slf4j.LoggerFactory;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * Created by admin on 2016-06-12.
  */
 @Controller
+@EnableWebMvc
+
 //@EnableAutoConfiguration
-public class ViewController {
+public class ViewController extends WebMvcConfigurerAdapter {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ViewController.class);
 
+    @RequestMapping(value = "/")
+    public String index() {
+        return "index";
+    }
 
     @RequestMapping(value = "/main" , method = {RequestMethod.GET, RequestMethod.POST})
     public String index(Model model) {
         return "main2";
     }
 
+
     @RequestMapping(value = "/login",  method = {RequestMethod.GET, RequestMethod.POST})
     public String login(Model model) {
-        return "login";
-    }
+        return "login";    }
 
     @RequestMapping(value = "/join" , method = {RequestMethod.GET, RequestMethod.POST} )
     public String join(Model model) {
         return "join";
     }
-
-    @RequestMapping(value = "/testlogin" , method = {RequestMethod.GET, RequestMethod.POST} )
-    public String testlogin(Model model) {
-        return "testlogin";
-    }
-
-
-
 
 
 //
